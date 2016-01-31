@@ -1,0 +1,29 @@
+<h1>Listing gls</h1>
+
+<table>
+  <tr>
+    <th>Id</th>
+  <% for column in Gl.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for gl in @gls %>
+  <tr>
+    <td><%= gl.id %></td>
+  <% for column in Gl.content_columns %>
+    <td><%=h gl.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => gl %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => gl %></td>
+    <td><%= link_to 'Destroy', { :action => 'destroy', :id => gl }, :confirm => 'Are you sure?', :method => :post %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @gl_pages.current.previous } if @gl_pages.current.previous %>
+<%= link_to 'Next page', { :page => @gl_pages.current.next } if @gl_pages.current.next %> 
+
+<br />
+
+<%= link_to 'New gl', :action => 'new' %>

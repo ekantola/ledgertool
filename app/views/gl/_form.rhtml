@@ -1,0 +1,16 @@
+<%= error_messages_for 'gl' %>
+
+<!--[form:gl]-->
+<p><label for="gl_reference">Reference</label><br/>
+<%= text_area 'gl', 'reference'  %></p>
+
+<p><label for="gl_description">Description</label><br/>
+<%= text_area 'gl', 'description'  %></p>
+
+<p><label for="gl_transdate">Transdate</label><br/>
+<%= date_select 'gl', 'transdate'  %></p>
+
+<p><label for="gl_notes">Notes</label><br/>
+<%= text_area 'gl', 'notes'  %></p>
+<!--[eoform:gl]-->
+

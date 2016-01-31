@@ -1,0 +1,24 @@
+<h1>Listing id</h1>
+
+<table>
+  <tr>
+  <% for column in Id.content_columns %>
+    <th><%= column.human_name %></th>
+  <% end %>
+  </tr>
+  
+<% for id in @ids %>
+  <tr>
+  <% for column in Id.content_columns %>
+    <td><%=h id.send(column.name) %></td>
+  <% end %>
+    <td><%= link_to 'Show', :action => 'show', :id => id %></td>
+    <td><%= link_to 'Edit', :action => 'edit', :id => id %></td>
+  </tr>
+<% end %>
+</table>
+
+<%= link_to 'Previous page', { :page => @id_pages.current.previous } if @id_pages.current.previous %>
+<%= link_to 'Next page', { :page => @id_pages.current.next } if @id_pages.current.next %> 
+
+<br />

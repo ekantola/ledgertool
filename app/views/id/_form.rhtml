@@ -1,0 +1,31 @@
+<%= error_messages_for 'id' %>
+
+<!--[form:id]-->
+<p><label for="id_sequence_name">Sequence name</label><br/>
+</p>
+
+<p><label for="id_last_value">Last value</label><br/>
+<%= text_field 'id', 'last_value'  %></p>
+
+<p><label for="id_increment_by">Increment by</label><br/>
+<%= text_field 'id', 'increment_by'  %></p>
+
+<p><label for="id_max_value">Max value</label><br/>
+<%= text_field 'id', 'max_value'  %></p>
+
+<p><label for="id_min_value">Min value</label><br/>
+<%= text_field 'id', 'min_value'  %></p>
+
+<p><label for="id_cache_value">Cache value</label><br/>
+<%= text_field 'id', 'cache_value'  %></p>
+
+<p><label for="id_log_cnt">Log cnt</label><br/>
+<%= text_field 'id', 'log_cnt'  %></p>
+
+<p><label for="id_is_cycled">Is cycled</label><br/>
+<select id="id_is_cycled" name="id[is_cycled]"><option value="false">False</option><option value="true">True</option></select></p>
+
+<p><label for="id_is_called">Is called</label><br/>
+<select id="id_is_called" name="id[is_called]"><option value="false">False</option><option value="true">True</option></select></p>
+<!--[eoform:id]-->
+

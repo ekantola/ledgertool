@@ -1,0 +1,24 @@
+<script type="text/javascript">
+dojo.require("dojo.widget.Editor");
+
+var editor;
+function onLoad() {
+  editor = dojo.widget.createWidget("Editor2", {}, dojo.byId("contentNode"));
+}
+
+dojo.addOnLoad(onLoad);
+</script>
+
+<form method="post" action="submit">
+  <p>Paste the transactions in the text area as a table using the following columns:<br/>
+  <table border="1"><tr>
+    <th>tx_number</th><th>k</th><th>date</th><th>name</th><th>type</th><th>message</th><th>sum</th><th>other_account</th></tr>
+  </table>
+  </p>
+  <p><strong>Note:</strong> copying tables works best from OpenOffice/LibreOffice. Microsoft Office may or may not work.</p>
+  <br/>
+  <input type="submit" value="Send transactions"/>
+  <%= link_to 'Clear', :action => 'edit' %>
+  <textarea name="data" style="border: 1px solid; padding: 1px" id="contentNode"/>
+</form>
+

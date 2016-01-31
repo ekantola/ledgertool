@@ -1,0 +1,56 @@
+<!--script type="text/javascript">
+dojo.require("dojo.io.*");
+
+function confirmImport() {
+  bindArgs = {
+    url: "import",
+    error: function(type, data, evt) {
+      alert("Import error: " + data);
+    },
+    load: function(type, data, evt) {
+      alert(data.result);
+      window.location = "edit";
+    },
+    mimetype: "text/json"
+  };
+  dojo.io.bind(bindArgs);
+}
+</script-->
+
+<h1>Confirm transaction import</h1>
+
+<p>The following <b><%=h @txs.size %></b> transactions will be imported in SQL Ledger, database <b>hev</b>.</p>
+
+<hr/>
+<table>
+  <tr>
+    <th>Ref</th>
+    <th>Date</th>
+    <th>Actor</th>
+    <th>Message</th>
+    <th>Amount</th>
+    <th>Account</th>
+    <th>Account description</th>
+  </tr>
+<% for tx in @txs %>
+  <tr>
+    <td><%=h tx.ref %></td>
+    <td><%=h tx.date %></td>
+    <td><%=h tx.actor %></td>
+    <td><%=h tx.message %></td>
+    <td align="right" style="color: <%= (tx.amount < 0) ? "#AF0000" : "#007F00" %>"><%=h tx.amount.to_eur %>&nbsp;€</td>
+    <td><%=h tx.account %></td>
+    <td><%= tx.acc_name ? h(tx.acc_name) : '<span style="color: #FF0000">Invalid account number!</span>' %></td>
+  </tr>
+<% end %>
+</table>
+<hr/>
+
+<p>After you have verified that this is correct, proceed with the import by pressing Confirm (or hit Cancel to abort).</p>
+
+<div id="buttonArea" style="display: block;">
+<a href="import">Confirm</a>
+<!--a href="javascript:confirmImport()">Confirm</a-->
+<%= link_to 'Cancel', :action => 'cancel' %>
+</div>
+

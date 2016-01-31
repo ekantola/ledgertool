@@ -1,0 +1,25 @@
+<%= error_messages_for 'chart' %>
+
+<!--[form:chart]-->
+<p><label for="chart_accno">Accno</label><br/>
+<%= text_area 'chart', 'accno'  %></p>
+
+<p><label for="chart_description">Description</label><br/>
+<%= text_area 'chart', 'description'  %></p>
+
+<p><label for="chart_charttype">Charttype</label><br/>
+<%= text_field 'chart', 'charttype'  %></p>
+
+<p><label for="chart_category">Category</label><br/>
+<%= text_field 'chart', 'category'  %></p>
+
+<p><label for="chart_link">Link</label><br/>
+<%= text_area 'chart', 'link'  %></p>
+
+<p><label for="chart_gifi_accno">Gifi accno</label><br/>
+<%= text_area 'chart', 'gifi_accno'  %></p>
+
+<p><label for="chart_contra">Contra</label><br/>
+<select id="chart_contra" name="chart[contra]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+<!--[eoform:chart]-->
+

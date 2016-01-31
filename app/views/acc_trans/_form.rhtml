@@ -1,0 +1,22 @@
+<%= error_messages_for 'acc_trans' %>
+
+<!--[form:acc_trans]-->
+<p><label for="acc_trans_amount">Amount</label><br/>
+<%= text_field 'acc_trans', 'amount'  %></p>
+
+<p><label for="acc_trans_transdate">Transdate</label><br/>
+<%= date_select 'acc_trans', 'transdate'  %></p>
+
+<p><label for="acc_trans_source">Source</label><br/>
+<%= text_area 'acc_trans', 'source'  %></p>
+
+<p><label for="acc_trans_cleared">Cleared</label><br/>
+<select id="acc_trans_cleared" name="acc_trans[cleared]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<p><label for="acc_trans_fx_transaction">Fx transaction</label><br/>
+<select id="acc_trans_fx_transaction" name="acc_trans[fx_transaction]"><option value="false" selected>False</option><option value="true">True</option></select></p>
+
+<p><label for="acc_trans_memo">Memo</label><br/>
+<%= text_area 'acc_trans', 'memo'  %></p>
+<!--[eoform:acc_trans]-->
+
